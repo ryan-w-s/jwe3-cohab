@@ -39,10 +39,46 @@ bun run test
 bun run sanity
 ```
 
+
+## Data Specification
+
+We use a standardized JSON format to store dinosaur data, specifically focusing on their needs and cohabitation preferences.
+
+### TypeScript Interface
+
+```typescript
+type DinosaurFamily = string; // E.g., "Ornithomimosaurid", "Carnivores"
+
+interface Dinosaur {
+  name: string; // Acts as the unique identifier
+  family: DinosaurFamily;
+  /**
+   * Needs are represented as fractions (0.0 - 1.0) for percentages,
+   * or absolute values for specific counts (like fish).
+   */
+  needs: {
+    cover?: number;
+    pasture?: number;
+    water?: number;
+    ground_fiber?: number;
+    fish?: number;
+    // ... other potential needs
+  };
+  social: {
+    min_population: number;
+    min_females?: number | "any";
+  };
+  cohabitation: {
+    likes: (string | DinosaurFamily)[];
+    dislikes: (string | DinosaurFamily)[];
+  };
+}
+```
+
+
 ## Instructions
 
 - All code should be modular and reusable, composable, and testable
 - Lean towards using shadcn/ui components before creating new components where possible
 - Always run `bun run sanity` before finishing any task, it runs lint, typecheck, and tests all in one easily
 - Tests don't need to have 100% coverage, but every function and component (that isn't auto-generated) should have at least one test case showing it can run
-
