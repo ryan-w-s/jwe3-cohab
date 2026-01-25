@@ -1,0 +1,185 @@
+[
+    {
+        "name": "Caiuajara",
+        "family": "Flying Reptile",
+        "needs": {
+            "arid": 0.60,
+            "barren": 0.15,
+            "cover": 0.18,
+            "water": 0.08,
+            "fish": 0.5
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Tapejara",
+                "Quetzalcoatlus"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores"
+            ]
+        }
+    },
+    {
+        "name": "Dimorphodon",
+        "family": "Flying Reptile",
+        "needs": {
+            "arid": 0.20,
+            "pasture": 0.40,
+            "water": 0.40,
+            "fish": 0.3
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Quetzalcoatlus"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores"
+            ]
+        }
+    },
+    {
+        "name": "Geosternbergia",
+        "family": "Flying Reptile",
+        "needs": {
+            "cover": 0.11,
+            "pasture": 0.52,
+            "wetland": 0.27,
+            "water": 0.10,
+            "fish": 0.5
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Pteranodon",
+                "Tropeognathus"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores"
+            ]
+        }
+    },
+    {
+        "name": "Pteranodon",
+        "family": "Flying Reptile",
+        "needs": {
+            "barren": 0.12,
+            "pasture": 0.60,
+            "water": 0.28,
+            "fish": 0.5
+        },
+        "social": {
+            "min_population": 2,
+            "min_males": 1,
+            "min_females": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Geosternbergia",
+                "Thanatosdrakon"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores"
+            ]
+        }
+    },
+    {
+        "name": "Quetzalcoatlus",
+        "family": "Flying Reptile",
+        "needs": {
+            "arid": 0.26,
+            "barren": 0.39,
+            "wetland": 0.07,
+            "water": 0.28,
+            "fish": 0.5
+        },
+        "social": {
+            "min_population": 2,
+            "min_females": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Dimorphodon",
+                "Tapejara",
+                "Caiuajara"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores"
+            ]
+        }
+    },
+    {
+        "name": "Tapejara",
+        "family": "Flying Reptile",
+        "needs": {
+            "cover": 0.13,
+            "pasture": 0.77,
+            "water": 0.10,
+            "fish": 0.5
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Quetzalcoatlus",
+                "Caiuajara"
+            ],
+            "dislikes": [
+                "Tropeognathus",
+                "Hybrid Carnivores"
+            ]
+        }
+    },
+    {
+        "name": "Thanatosdrakon",
+        "family": "Flying Reptile",
+        "needs": {
+            "barren": 0.10,
+            "pasture": 0.59,
+            "wetland": 0.08,
+            "water": 0.23,
+            "fish": 0.5
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Pteranodon"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores"
+            ]
+        }
+    },
+    {
+        "name": "Tropeognathus",
+        "family": "Flying Reptile",
+        "needs": {
+            "cover": 0.04,
+            "pasture": 0.86,
+            "water": 0.10,
+            "fish": 0.5
+        },
+        "social": {
+            "min_population": 2,
+            "min_males": 1,
+            "min_females": 1
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Tapejara",
+                "Hybrid Carnivores"
+            ]
+        }
+    }
+]
