@@ -1,0 +1,2208 @@
+[
+    {
+        "name": "Ankylosaurus",
+        "family": "Ankylosaurid",
+        "needs": {
+            "pasture": 0.15,
+            "wetland": 0.19,
+            "water": 0.10,
+            "ground_leaf": 0.28,
+            "ground_fruit": 0.28
+        },
+        "social": {
+            "min_population": 1,
+            "max_males": 4,
+            "max_females": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Ankylosaurid",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Nodosaurus",
+        "family": "Ankylosaurid",
+        "needs": {
+            "pasture": 0.45,
+            "water": 0.10,
+            "ground_leaf": 0.45
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Hadrosaurid",
+                "Pachycephalosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Ankylosaurid",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Sauropelta",
+        "family": "Ankylosaurid",
+        "needs": {
+            "pasture": 0.30,
+            "water": 0.10,
+            "ground_leaf": 0.30,
+            "ground_fruit": 0.30
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Hadrosaurid",
+                "Pachycephalosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Ankylosaurid",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Chasmosaurus",
+        "family": "Ceratopsid",
+        "needs": {
+            "cover": 0.09,
+            "pasture": 0.41,
+            "water": 0.10,
+            "ground_leaf": 0.41
+        },
+        "social": {
+            "min_population": 1,
+            "max_males": 5,
+            "max_females": 5
+        },
+        "cohabitation": {
+            "likes": [
+                "Microceratus",
+                "Styracosaurus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid"
+            ],
+            "dislikes": [
+                "Nasutoceratops",
+                "Spinoceratops",
+                "Hybrid Carnivores",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Lokiceratops",
+        "family": "Ceratopsid",
+        "needs": {
+            "cover": 0.14,
+            "wetland": 0.36,
+            "water": 0.10,
+            "ground_fiber": 0.40
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Microceratus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Stegoceratops",
+                "Carnivores",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Microceratus",
+        "family": "Ceratopsid",
+        "needs": {
+            "pasture": 0.55,
+            "water": 0.10,
+            "ground_leaf": 0.21,
+            "ground_fiber": 0.14
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Lystrosaurus",
+                "Ceratopsid"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Nasutoceratops",
+        "family": "Ceratopsid",
+        "needs": {
+            "cover": 0.31,
+            "water": 0.10,
+            "ground_leaf": 0.59
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Microceratus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Stegoceratops",
+                "Carnivores",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Protoceratops",
+        "family": "Ceratopsid",
+        "needs": {
+            "cover": 0.25,
+            "water": 0.10,
+            "ground_leaf": 0.19,
+            "ground_fiber": 0.47
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Microceratus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Stegoceratops",
+                "Carnivores",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Psittacosaurus",
+        "family": "Ceratopsid",
+        "needs": {
+            "cover": 0.25,
+            "water": 0.10,
+            "ground_fruit": 0.34,
+            "ground_nut": 0.31
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Sinoceratops",
+        "family": "Ceratopsid",
+        "needs": {
+            "cover": 0.12,
+            "wetland": 0.06,
+            "water": 0.10,
+            "ground_fiber": 0.71
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Microceratus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Triceratops",
+                "Styracosaurus",
+                "Carnivores",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Spinoceratops",
+        "family": "Ceratopsid",
+        "needs": {
+            "cover": 0.07,
+            "pasture": 0.26,
+            "water": 0.39,
+            "ground_fiber": 0.28,
+            "fish": 0.20
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Chasmosaurus",
+                "Carnivores",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Styracosaurus",
+        "family": "Ceratopsid",
+        "needs": {
+            "cover": 0.12,
+            "wetland": 0.25,
+            "water": 0.10,
+            "ground_fiber": 0.53
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Microceratus",
+                "Chasmosaurus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid"
+            ],
+            "dislikes": [
+                "Triceratops",
+                "Sinoceratops",
+                "Hybrid Carnivores",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Triceratops",
+        "family": "Ceratopsid",
+        "needs": {
+            "cover": 0.19,
+            "wetland": 0.20,
+            "water": 0.10,
+            "ground_fiber": 0.51
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Stegoceratops",
+                "Microceratus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Styracosaurus",
+                "Sinoceratops",
+                "Carnivores",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Corythosaurus",
+        "family": "Hadrosaurid",
+        "needs": {
+            "pasture": 0.59,
+            "water": 0.09,
+            "ground_leaf": 0.32
+        },
+        "social": {
+            "min_population": 4,
+            "min_males": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Edmontosaurus",
+        "family": "Hadrosaurid",
+        "needs": {
+            "pasture": 0.50,
+            "wetland": 0.31,
+            "water": 0.07,
+            "ground_fiber": 0.12
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Iguanodon",
+        "family": "Hadrosaurid",
+        "needs": {
+            "pasture": 0.07,
+            "wetland": 0.54,
+            "water": 0.10,
+            "ground_fruit": 0.29
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Maiasaura",
+        "family": "Hadrosaurid",
+        "needs": {
+            "pasture": 0.6,
+            "water": 0.1,
+            "ground_fiber": 0.15,
+            "ground_nut": 0.15
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Parasaurolophus",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Muttaburrasaurus",
+        "family": "Hadrosaurid",
+        "needs": {
+            "cover": 0.28,
+            "water": 0.18,
+            "ground_fiber": 0.55
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Olorotitan",
+        "family": "Hadrosaurid",
+        "needs": {
+            "wetland": 0.3,
+            "water": 0.1,
+            "ground_fiber": 0.6
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Parasaurolophus",
+        "family": "Hadrosaurid",
+        "needs": {
+            "pasture": 0.31,
+            "wetland": 0.4,
+            "water": 0.1,
+            "ground_nut": 0.19
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Maiasaura",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Tsintaosaurus",
+        "family": "Hadrosaurid",
+        "needs": {
+            "pasture": 0.6,
+            "water": 0.1,
+            "ground_fiber": 0.3
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Indominus rex",
+        "family": "Hybrid Carnivores",
+        "needs": {
+            "cover": 0.23,
+            "pasture": 0.67,
+            "water": 0.1,
+            "prey": 1.0
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Velociraptor"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Flying Reptile",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Marine (Large)",
+                "Marine (Medium)",
+                "Marine (Small)",
+                "Therizinosaurus",
+                "Marine Animal",
+                "Scavenger"
+            ]
+        }
+    },
+    {
+        "name": "Indoraptor",
+        "family": "Hybrid Carnivores",
+        "needs": {
+            "barren": 0.1,
+            "pasture": 0.72,
+            "water": 0.18,
+            "prey": 1.0
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Carnivores",
+                "Flying Reptile",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Marine (Large)",
+                "Marine (Medium)",
+                "Marine (Small)",
+                "Therizinosaurus",
+                "Marine Animal",
+                "Scavenger"
+            ]
+        }
+    },
+    {
+        "name": "Scorpios rex",
+        "family": "Hybrid Carnivores",
+        "needs": {
+            "cover": 0.2,
+            "pasture": 0.67,
+            "water": 0.13,
+            "prey": 0.3
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Carnivores",
+                "Flying Reptile",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Marine (Large)",
+                "Marine (Medium)",
+                "Marine (Small)",
+                "Therizinosaurus",
+                "Marine Animal",
+                "Scavenger"
+            ]
+        }
+    },
+    {
+        "name": "Spinoraptor",
+        "family": "Hybrid Carnivores",
+        "needs": {
+            "cover": 0.14,
+            "pasture": 0.56,
+            "deep_water": 0.30,
+            "meat": 0.30,
+            "fish": 0.40
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Velociraptor",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Acrocanthosaurus",
+        "family": "Large Carnivore",
+        "needs": {
+            "cover": 0.23,
+            "pasture": 0.67,
+            "water": 0.1,
+            "prey": 1.0
+        },
+        "social": {
+            "min_population": 1,
+            "max_males": 2,
+            "max_females": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Giganotosaurus",
+        "family": "Large Carnivore",
+        "needs": {
+            "cover": 0.11,
+            "pasture": 0.6,
+            "wetland": 0.18,
+            "water": 0.1,
+            "prey": 1.0
+        },
+        "social": {
+            "min_population": 2,
+            "min_females": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Spinosaurus",
+        "family": "Large Carnivore",
+        "needs": {
+            "pasture": 0.25,
+            "wetland": 0.25,
+            "deep_water": 0.5
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Tyrannosaurus Rex",
+        "family": "Large Carnivore",
+        "needs": {
+            "arid": 0.15,
+            "cover": 0.13,
+            "pasture": 0.62,
+            "water": 0.1,
+            "prey": 0.7
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Albertosaurus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "arid": 0.06,
+            "barren": 0.11,
+            "wetland": 0.7,
+            "water": 0.13,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Carnotaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Allosaurus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "cover": 0.15,
+            "pasture": 0.75,
+            "water": 0.1,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Ceratosaurus",
+                "Metriacanthosaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Baryonyx",
+        "family": "Medium Carnivore",
+        "needs": {
+            "barren": 0.26,
+            "cover": 0.22,
+            "wetland": 0.26,
+            "deep_water": 0.26
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Suchomimus",
+                "Irritator",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Carnotaurus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "arid": 0.45,
+            "wetland": 0.45,
+            "water": 0.1,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 2,
+            "max_males": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Albertosaurus",
+                "Majungasaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Ceratosaurus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "cover": 0.15,
+            "pasture": 0.37,
+            "wetland": 0.37,
+            "water": 0.1,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 1,
+            "max_males": 3,
+            "max_females": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Allosaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Concavenator",
+        "family": "Medium Carnivore",
+        "needs": {
+            "cover": 0.16,
+            "pasture": 0.4,
+            "water": 0.43,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 2,
+            "min_males": 1,
+            "min_females": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Irritator",
+        "family": "Medium Carnivore",
+        "needs": {
+            "barren": 0.12,
+            "cover": 0.22,
+            "wetland": 0.3,
+            "deep_water": 0.36
+        },
+        "social": {
+            "min_population": 2,
+            "max_males": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Baryonyx",
+                "Suchomimus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Majungasaurus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "barren": 0.07,
+            "cover": 0.28,
+            "pasture": 0.59,
+            "water": 0.06,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Qianzhousaurus",
+                "Carnotaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Metriacanthosaurus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "cover": 0.08,
+            "pasture": 0.82,
+            "water": 0.1,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Allosaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Qianzhousaurus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "barren": 0.06,
+            "cover": 0.03,
+            "pasture": 0.74,
+            "water": 0.18,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Majungasaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Suchomimus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "arid": 0.16,
+            "cover": 0.22,
+            "deep_water": 0.62
+        },
+        "social": {
+            "min_population": 3,
+            "min_males": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Baryonyx",
+                "Irritator",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Yutyrannus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "cover": 0.3,
+            "pasture": 0.51,
+            "water": 0.19,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Archaeornithomimus",
+        "family": "Ornithomimosaurid",
+        "needs": {
+            "cover": 0.19,
+            "water": 0.22,
+            "ground_fruit": 0.6
+        },
+        "social": {
+            "min_population": 6
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Deinocheirus",
+        "family": "Ornithomimosaurid",
+        "needs": {
+            "wetland": 0.1,
+            "water": 0.52,
+            "ground_leaf": 0.38,
+            "fish": 0.3
+        },
+        "social": {
+            "min_population": 2,
+            "min_males": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Hadrosaurid"
+            ],
+            "dislikes": [
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Dryosaurus",
+        "family": "Ornithomimosaurid",
+        "needs": {
+            "pasture": 0.46,
+            "water": 0.1,
+            "ground_leaf": 0.22,
+            "ground_fiber": 0.22
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Gallimimus",
+        "family": "Ornithomimosaurid",
+        "needs": {
+            "cover": 0.08,
+            "wetland": 0.16,
+            "water": 0.1,
+            "ground_leaf": 0.66
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Ornithomimus",
+        "family": "Ornithomimosaurid",
+        "needs": {
+            "cover": 0.07,
+            "wetland": 0.14,
+            "water": 0.09,
+            "ground_leaf": 0.53,
+            "ground_fruit": 0.18
+        },
+        "social": {
+            "min_population": 6
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Struthiomimus",
+        "family": "Ornithomimosaurid",
+        "needs": {
+            "cover": 0.15,
+            "water": 0.1,
+            "ground_leaf": 0.75
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Homalocephale",
+        "family": "Pachycephalosaurid",
+        "needs": {
+            "pasture": 0.34,
+            "water": 0.34,
+            "ground_leaf": 0.16,
+            "ground_fiber": 0.16
+        },
+        "social": {
+            "min_population": 5
+        },
+        "cohabitation": {
+            "likes": [
+                "Psittacosaurus",
+                "Sauropod",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Hypsilophodon",
+        "family": "Pachycephalosaurid",
+        "needs": {
+            "cover": 0.1,
+            "wetland": 0.39,
+            "water": 0.11,
+            "ground_leaf": 0.39
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Pachycephalosaurus",
+        "family": "Pachycephalosaurid",
+        "needs": {
+            "wetland": 0.6,
+            "water": 0.1,
+            "ground_leaf": 0.3
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Psittacosaurus",
+                "Sauropod",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Stygimoloch",
+        "family": "Pachycephalosaurid",
+        "needs": {
+            "cover": 0.15,
+            "water": 0.1,
+            "ground_leaf": 0.75
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Psittacosaurus",
+                "Sauropod",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Ankylodocus",
+        "family": "Sauropod",
+        "needs": {
+            "cover": 0.19,
+            "pasture": 0.24,
+            "water": 0.1,
+            "tall_leaf": 0.1,
+            "tall_fruit": 0.37
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Apatosaurus",
+        "family": "Sauropod",
+        "needs": {
+            "cover": 0.18,
+            "pasture": 0.32,
+            "water": 0.1,
+            "tall_leaf": 0.4
+        },
+        "social": {
+            "min_population": 2,
+            "min_males": 1,
+            "min_females": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Brachiosaurus",
+                "Ankylodocus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Sauropod",
+                "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Brachiosaurus",
+        "family": "Sauropod",
+        "needs": {
+            "cover": 0.14,
+            "wetland": 0.19,
+            "water": 0.1,
+            "tall_nut": 0.57
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Apatosaurus",
+                "Ankylodocus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Sauropod",
+                "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Diplodocus",
+        "family": "Sauropod",
+        "needs": {
+            "cover": 0.1,
+            "pasture": 0.2,
+            "wetland": 0.28,
+            "water": 0.1,
+            "tall_fruit": 0.32
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Ankylodocus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Sauropod",
+                "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Dreadnoughtus",
+        "family": "Sauropod",
+        "needs": {
+            "cover": 0.13,
+            "wetland": 0.29,
+            "water": 0.1,
+            "tall_fiber": 0.32,
+            "tall_fruit": 0.16
+        },
+        "social": {
+            "min_population": 1,
+            "max_males": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Ankylodocus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Sauropod",
+                "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Mamenchisaurus",
+        "family": "Sauropod",
+        "needs": {
+            "cover": 0.16,
+            "pasture": 0.33,
+            "water": 0.1,
+            "tall_leaf": 0.41
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Ankylodocus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Sauropod",
+                "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Patagotitan",
+        "family": "Sauropod",
+        "needs": {
+            "cover": 0.17,
+            "pasture": 0.36,
+            "water": 0.1,
+            "tall_fiber": 0.24,
+            "tall_fruit": 0.12
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Ankylodocus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Sauropod",
+                "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Coelophysis",
+        "family": "Scavenger",
+        "needs": {
+            "cover": 0.08,
+            "pasture": 0.82,
+            "water": 0.1,
+            "meat": 0.2
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Carnivores",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Therizinosaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Indominus rex",
+                "Indoraptor",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Compsognathus",
+        "family": "Scavenger",
+        "needs": {
+            "arid": 0.45,
+            "pasture": 0.45,
+            "water": 0.1,
+            "meat": 0.1
+        },
+        "social": {
+            "min_population": 5
+        },
+        "cohabitation": {
+            "likes": [
+                "Carnivores",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Therizinosaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Indominus rex",
+                "Indoraptor",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Moros intrepidus",
+        "family": "Scavenger",
+        "needs": {
+            "arid": 0.3,
+            "pasture": 0.6,
+            "water": 0.1,
+            "meat": 0.1
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Carnivores",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Therizinosaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Indominus rex",
+                "Indoraptor",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Oviraptor",
+        "family": "Scavenger",
+        "needs": {
+            "cover": 0.15,
+            "water": 0.1,
+            "ground_leaf": 0.75,
+            "meat": 0.1
+        },
+        "social": {
+            "min_population": 4,
+            "min_females": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Carnivores",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Therizinosaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Indominus rex",
+                "Indoraptor",
+                "Lystrosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Atrociraptor",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.16,
+            "pasture": 0.74,
+            "water": 0.1,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Austroraptor",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.16,
+            "pasture": 0.16,
+            "wetland": 0.51,
+            "water": 0.17,
+            "fish": 0.4
+        },
+        "social": {
+            "min_population": 3,
+            "max_females": 8
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Spinoraptor",
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Deinonychus",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.13,
+            "wetland": 0.77,
+            "water": 0.1,
+            "meat": 0.3
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Dilophosaurus",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.23,
+            "pasture": 0.33,
+            "wetland": 0.33,
+            "water": 0.1,
+            "prey": 0.4
+        },
+        "social": {
+            "min_population": 2,
+            "min_males": 1,
+            "min_females": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Dimetrodon",
+        "family": "Small Carnivore",
+        "needs": {
+            "arid": 0.42,
+            "cover": 0.05,
+            "deep_water": 0.53,
+            "meat": 0.3
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Guanlong",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.13,
+            "pasture": 0.72,
+            "water": 0.15,
+            "prey": 0.4
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Herrerasaurus",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.17,
+            "pasture": 0.73,
+            "water": 0.1,
+            "prey": 0.4
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Proceratosaurus",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.17,
+            "pasture": 0.73,
+            "water": 0.1,
+            "meat": 0.4
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Pyroraptor",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.1,
+            "pasture": 0.8,
+            "deep_water": 0.1,
+            "prey": 0.3
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Troodon",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.15,
+            "pasture": 0.75,
+            "water": 0.1,
+            "prey": 0.4
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Utahraptor",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.22,
+            "pasture": 0.49,
+            "wetland": 0.19,
+            "water": 0.1,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 2,
+            "max_females": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Velociraptor",
+        "family": "Small Carnivore",
+        "needs": {
+            "cover": 0.16,
+            "pasture": 0.74,
+            "water": 0.1,
+            "prey": 0.4
+        },
+        "social": {
+            "min_population": 2,
+            "min_females": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Indominus rex",
+                "Spinoraptor",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Chungkingosaurus",
+        "family": "Stegosaurid",
+        "needs": {
+            "pasture": 0.69,
+            "water": 0.1,
+            "ground_fruit": 0.21
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Gigantspinosaurus",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Gigantspinosaurus",
+        "family": "Stegosaurid",
+        "needs": {
+            "cover": 0.15,
+            "water": 0.1,
+            "ground_leaf": 0.75
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Chungkingosaurus",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid"
+            ],
+            "dislikes": [
+                "Hybrid Carnivores",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Kentrosaurus",
+        "family": "Stegosaurid",
+        "needs": {
+            "cover": 0.12,
+            "water": 0.1,
+            "ground_fiber": 0.78
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid"
+            ],
+            "dislikes": [
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Indoraptor",
+                "Stegosaurid",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Stegoceratops",
+        "family": "Stegosaurid",
+        "needs": {
+            "cover": 0.16,
+            "water": 0.1,
+            "ground_fiber": 0.42,
+            "ground_fruit": 0.32
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Stegosaurus",
+                "Microceratus",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Nasutoceratops",
+                "Carnivores",
+                "Ankylosaurid",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Stegosaurus",
+        "family": "Stegosaurid",
+        "needs": {
+            "cover": 0.14,
+            "water": 0.1,
+            "ground_fiber": 0.41,
+            "ground_fruit": 0.35
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Stegoceratops",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
+        "name": "Lystrosaurus",
+        "family": "Therapsid",
+        "needs": {
+            "pasture": 0.56,
+            "water": 0.11,
+            "ground_leaf": 0.17,
+            "ground_fiber": 0.17
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Microceratus",
+                "Therizinosaurus"
+            ],
+            "dislikes": [
+                "Oviraptor",
+                "Carnivores"
+            ]
+        }
+    },
+    {
+        "name": "Therizinosaurus",
+        "family": "Therizinosaurus",
+        "needs": {
+            "cover": 0.15,
+            "water": 0.1,
+            "ground_leaf": 0.75
+        },
+        "social": {
+            "min_population": 1,
+            "max_males": 1,
+            "max_females": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Lystrosaurus",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Flying Reptile",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Therizinosaurus"
+            ]
+        }
+    }
+]

@@ -18,7 +18,11 @@ export interface Dinosaur {
     }
     social: {
         min_population: number
-        min_females?: number | "any"
+        max_population?: number
+        min_males?: number
+        max_males?: number
+        min_females?: number
+        max_females?: number
     }
     cohabitation: {
         likes: (string | DinosaurFamily)[]
