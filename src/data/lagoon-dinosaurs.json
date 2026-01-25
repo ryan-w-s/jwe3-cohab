@@ -1,0 +1,126 @@
+[
+    {
+        "name": "Kronosaurus",
+        "family": "Marine (Large)",
+        "needs": {
+            "fish": 0.50,
+            "open_water": 1.0
+        },
+        "social": {
+            "min_population": 2,
+            "min_males": 1,
+            "min_females": 1
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Marine (Large)"
+            ]
+        }
+    },
+    {
+        "name": "Megalodon",
+        "family": "Marine (Large)",
+        "needs": {
+            "shark": 0.80,
+            "open_water": 1.0
+        },
+        "social": {
+            "min_population": 1,
+            "max_males": 2,
+            "max_females": 2
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Dunkleosteus"
+            ]
+        }
+    },
+    {
+        "name": "Mosasaurus",
+        "family": "Marine (Large)",
+        "needs": {
+            "shark": 1.00,
+            "open_water": 1.0
+        },
+        "social": {
+            "min_population": 1,
+            "max_males": 1,
+            "max_females": 1
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Marine (Large)"
+            ]
+        }
+    },
+    {
+        "name": "Attenborosaurus",
+        "family": "Marine (Medium)",
+        "needs": {
+            "fish": 0.40,
+            "open_water": 1.0
+        },
+        "social": {
+            "min_population": 3,
+            "min_males": 1,
+            "min_females": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Marine (Medium)",
+                "Marine (Small)"
+            ],
+            "dislikes": []
+        }
+    },
+    {
+        "name": "Dunkleosteus",
+        "family": "Marine (Medium)",
+        "needs": {
+            "fish": 0.40,
+            "open_water": 1.0
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Megalodon"
+            ]
+        }
+    },
+    {
+        "name": "Ichthyosaurus",
+        "family": "Marine (Small)",
+        "needs": {
+            "fish": 0.20,
+            "open_water": 1.0
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": []
+        }
+    },
+    {
+        "name": "Plesiosaurus",
+        "family": "Marine (Small)",
+        "needs": {
+            "fish": 0.40,
+            "open_water": 1.0
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": []
+        }
+    }
+]
