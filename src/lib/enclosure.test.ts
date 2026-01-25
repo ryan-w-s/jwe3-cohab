@@ -165,6 +165,42 @@ describe('Enclosure', () => {
         })
     })
 
+    describe('Cohabitation Precedence Rules', () => {
+        it('allows cohabitation if specific dino is liked, even if family is disliked', () => {
+            const enclosure = createEnclosure('fence')
+            // Dino likes "Buddy" but dislikes "GoodFamily"
+            enclosure.addDinosaur(
+                createTestDino({
+                    name: 'TheJudge',
+                    cohabitation: { likes: ['Buddy'], dislikes: ['GoodFamily'] },
+                }),
+            )
+            // "Buddy" belongs to "GoodFamily"
+            enclosure.addDinosaur(createTestDino({ name: 'Buddy', family: 'GoodFamily' }))
+
+            const warnings = enclosure.getCohabitationWarnings()
+            expect(warnings).toHaveLength(0)
+        })
+
+        it('warns if specific dino is disliked, even if family is liked', () => {
+            const enclosure = createEnclosure('fence')
+            // Dino dislikes "Enemy" but likes "BadFamily"
+            enclosure.addDinosaur(
+                createTestDino({
+                    name: 'TheJudge',
+                    cohabitation: { likes: ['BadFamily'], dislikes: ['Enemy'] },
+                }),
+            )
+            // "Enemy" belongs to "BadFamily"
+            enclosure.addDinosaur(createTestDino({ name: 'Enemy', family: 'BadFamily' }))
+
+            const warnings = enclosure.getCohabitationWarnings()
+            expect(warnings).toHaveLength(1)
+            expect(warnings[0].dinosaur).toBe('TheJudge')
+            expect(warnings[0].target).toBe('Enemy')
+        })
+    })
+
     describe('getSuggestedDinosaurs', () => {
         it('returns empty array for habitat with no dinosaurs', () => {
             const enclosure = createEnclosure('fence')

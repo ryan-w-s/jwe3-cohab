@@ -73,6 +73,7 @@ export class Enclosure {
     /**
      * Check for cohabitation conflicts between dinosaurs in the enclosure.
      * A conflict occurs when one dinosaur dislikes another dinosaur or its family.
+     * Specific name interactions take precedence over family interactions.
      */
     getCohabitationWarnings(): CohabitationWarning[] {
         const warnings: CohabitationWarning[] = []
@@ -82,15 +83,27 @@ export class Enclosure {
             for (const other of dinos) {
                 if (dino.name === other.name) continue
 
-                // Check if dino dislikes the other dino specifically or its family
-                for (const dislike of dino.cohabitation.dislikes) {
-                    if (dislike === other.name || dislike === other.family) {
-                        warnings.push({
-                            dinosaur: dino.name,
-                            target: dislike,
-                            reason: 'dislikes',
-                        })
-                    }
+                // 1. Check Specific Name Rule
+                if (dino.cohabitation.dislikes.includes(other.name)) {
+                    warnings.push({
+                        dinosaur: dino.name,
+                        target: other.name,
+                        reason: 'dislikes',
+                    })
+                    continue
+                }
+
+                if (dino.cohabitation.likes.includes(other.name)) {
+                    continue // Explicitly liked, strictly safe
+                }
+
+                // 2. Check Family Rule (only if no specific rule existed)
+                if (dino.cohabitation.dislikes.includes(other.family)) {
+                    warnings.push({
+                        dinosaur: dino.name,
+                        target: other.family,
+                        reason: 'dislikes',
+                    })
                 }
             }
         }
@@ -132,20 +145,26 @@ export class Enclosure {
      */
     private wouldCauseConflict(candidate: Dinosaur): boolean {
         for (const dino of this._dinosaurs.values()) {
-            // Check if candidate dislikes any current dinosaur or their family
-            for (const dislike of candidate.cohabitation.dislikes) {
-                if (dislike === dino.name || dislike === dino.family) {
-                    return true
-                }
-            }
+            // Check if candidate dislikes any current dinosaur
+            if (this.hasConflict(candidate, dino)) return true
 
-            // Check if any current dinosaur dislikes the candidate or its family
-            for (const dislike of dino.cohabitation.dislikes) {
-                if (dislike === candidate.name || dislike === candidate.family) {
-                    return true
-                }
-            }
+            // Check if any current dinosaur dislikes the candidate
+            if (this.hasConflict(dino, candidate)) return true
         }
+        return false
+    }
+
+    /**
+     * Helper to check if source dino has a conflict with target dino
+     */
+    private hasConflict(source: Dinosaur, target: Dinosaur): boolean {
+        // 1. Specific Name Precedence
+        if (source.cohabitation.dislikes.includes(target.name)) return true
+        if (source.cohabitation.likes.includes(target.name)) return false
+
+        // 2. Family Fallback
+        if (source.cohabitation.dislikes.includes(target.family)) return true
+
         return false
     }
 
@@ -173,10 +192,14 @@ export class Enclosure {
 
         // Bonus for dinosaurs that are liked by current inhabitants
         for (const dino of this._dinosaurs.values()) {
-            for (const like of dino.cohabitation.likes) {
-                if (like === candidate.name || like === candidate.family) {
-                    overlapScore += 0.5
-                }
+            // Check if current dino likes candidate (Name > Family)
+            if (dino.cohabitation.likes.includes(candidate.name)) {
+                overlapScore += 0.5
+            } else if (
+                dino.cohabitation.likes.includes(candidate.family) &&
+                !dino.cohabitation.dislikes.includes(candidate.name)
+            ) {
+                overlapScore += 0.25
             }
         }
 
