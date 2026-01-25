@@ -28,8 +28,9 @@ function addDinos(inputDinos: RawDinosaur[], habitat: Habitat) {
         dinosaur.habitat = habitat
         dinosaur.feedType = []
         for (const [key, value] of Object.entries(dinosaur.needs)) {
-            if (value && value > 0) {
-                dinosaur.feedType.push(...feedType[key as keyof Needs])
+            const types = feedType[key as keyof Needs]
+            if (value && value > 0 && types) {
+                dinosaur.feedType.push(...types)
             }
         }
         dinosByName[dinosaur.name] = dinosaur
