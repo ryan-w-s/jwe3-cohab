@@ -8,17 +8,30 @@ export interface Dinosaur {
      * or absolute values for specific counts (like fish).
      */
     needs: {
+        arid?: number
+        barren?: number
         cover?: number
-        pasture?: number
-        water?: number
-        ground_fiber?: number
+        deep_water?: number
         fish?: number
-        // ... other potential needs
-        [key: string]: number | undefined // Allow flexibility for other needs
+        ground_fiber?: number
+        ground_fruit?: number
+        ground_leaf?: number
+        ground_nut?: number
+        meat?: number
+        open_water?: number
+        pasture?: number
+        prey?: number
+        shark?: number
+        tall_fiber?: number
+        tall_fruit?: number
+        tall_leaf?: number
+        tall_nut?: number
+        water?: number
+        wetland?: number
+        [key: string]: number | undefined
     }
     social: {
         min_population: number
-        max_population?: number
         min_males?: number
         max_males?: number
         min_females?: number
