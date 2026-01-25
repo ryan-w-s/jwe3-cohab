@@ -45,4 +45,15 @@ describe('Dinosaur Data Loading', () => {
         // ground_nut -> ['nut']
         expect(taco.layoutType).toContain('nut')
     })
+
+    it('correctly expands carnivore categories', () => {
+        const theriz = dinosByName['Therizinosaurus']
+        expect(theriz).toBeDefined()
+        expect(theriz.cohabitation.dislikes).toContain('Carnivores')
+        expect(theriz.cohabitation.dislikes).toContain('Large Carnivore')
+        expect(theriz.cohabitation.dislikes).toContain('Medium Carnivore')
+        expect(theriz.cohabitation.dislikes).toContain('Small Carnivore')
+        expect(theriz.cohabitation.dislikes).toContain('Hybrid Carnivores')
+        expect(theriz.cohabitation.dislikes).not.toContain('Scavenger')
+    })
 })

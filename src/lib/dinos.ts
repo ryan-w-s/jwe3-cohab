@@ -18,11 +18,28 @@ const feedType: Record<keyof Needs, string[]> = {
     "tall_nut": ["nut"],
 }
 
+const CARNIVORE_FAMILIES = [
+    'Small Carnivore',
+    'Medium Carnivore',
+    'Large Carnivore',
+    'Hybrid Carnivores'
+]
+
+function expandCarnivoreCategory(list: (DinoName | DinosaurFamily)[]) {
+    if (list.includes('Carnivores')) {
+        list.push(...CARNIVORE_FAMILIES)
+    }
+}
+
 function addDinos(inputDinos: RawDinosaur[], habitat: Habitat) {
     for (const raw of inputDinos) {
         const dinosaur = raw as Dinosaur
         dinosaur.habitat = habitat
         dinosaur.layoutType = [] // Initialize new field
+
+        // Pre-process cohabitation rules: Expand "Carnivores" category
+        expandCarnivoreCategory(dinosaur.cohabitation.likes)
+        expandCarnivoreCategory(dinosaur.cohabitation.dislikes)
 
         for (const [key, value] of Object.entries(dinosaur.needs)) {
             if (value && value > 0) {

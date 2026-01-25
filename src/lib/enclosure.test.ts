@@ -163,6 +163,28 @@ describe('Enclosure', () => {
             expect(warnings[0].dinosaur).toBe('Carnivore')
             expect(warnings[0].target).toBe('Herbivore')
         })
+
+        it('detects when dinosaur dislikes "Carnivores" category (via expansion)', () => {
+            const enclosure = createEnclosure('fence')
+            // Ankylosaurus has "Carnivores" in dislikes in the JSON
+            // which should be expanded to include "Large Carnivore"
+            const herbivore = getDinosaur('Ankylosaurus')
+            if (!herbivore) throw new Error('Ankylosaurus not found')
+
+            enclosure.addDinosaur(herbivore)
+
+            // T. Rex is a "Large Carnivore"
+            const carnivore = getDinosaur('Tyrannosaurus Rex')
+            if (!carnivore) throw new Error('T. Rex not found')
+
+            enclosure.addDinosaur(carnivore)
+
+            const warnings = enclosure.getCohabitationWarnings()
+
+            expect(warnings.length).toBeGreaterThan(0)
+            const warning = warnings.find(w => w.dinosaur === 'Ankylosaurus' && w.target === 'Large Carnivore')
+            expect(warning).toBeDefined()
+        })
     })
 
     describe('Cohabitation Precedence Rules', () => {
