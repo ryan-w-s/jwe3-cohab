@@ -172,38 +172,58 @@ export class Enclosure {
      * Calculate how well a candidate's needs overlap with current combined needs.
      * Higher score = more overlap = dinosaur fits well without expanding needs much.
      */
+    /**
+     * Get the set of all active infrastructure types in the enclosure.
+     */
+    getCombinedInfrastructure(): Set<string> {
+        const combined = new Set<string>()
+        for (const dino of this.dinosaurs) {
+            for (const infra of dino.layoutType) {
+                combined.add(infra)
+            }
+        }
+        return combined
+    }
+
+    /**
+     * Calculate overlap score for a candidate dinosaur.
+     * Scoring hierarchy:
+     * 1. Social Likes (+50)
+     * 2. Infrastructure Presence (+10 for existing, -2 for new)
+     * 3. Capacity/Value Fit (+1 tie-breaker)
+     */
     private calculateOverlapScore(candidate: Dinosaur, currentNeeds: Needs): number {
-        let overlapScore = 0
-        let expansionPenalty = 0
+        let score = 0
+        const existingInfra = this.getCombinedInfrastructure()
 
-        for (const [key, value] of Object.entries(candidate.needs)) {
-            if (value === undefined || value === 0) continue
-
-            const currentValue = currentNeeds[key] ?? 0
-
-            if (currentValue > 0) {
-                // Need already exists - score based on how much it overlaps
-                overlapScore += Math.min(value, currentValue)
-            } else {
-                // New need required - small penalty
-                expansionPenalty += value * 0.5
-            }
-        }
-
-        // Bonus for dinosaurs that are liked by current inhabitants
+        // 1. Social Likes (Name OR Family)
         for (const dino of this._dinosaurs.values()) {
-            // Check if current dino likes candidate (Name > Family)
-            if (dino.cohabitation.likes.includes(candidate.name)) {
-                overlapScore += 0.5
-            } else if (
-                dino.cohabitation.likes.includes(candidate.family) &&
-                !dino.cohabitation.dislikes.includes(candidate.name)
-            ) {
-                overlapScore += 0.25
+            let isLiked = false
+            if (dino.cohabitation.likes.includes(candidate.name)) isLiked = true
+            if (dino.cohabitation.likes.includes(candidate.family)) isLiked = true
+
+            if (isLiked) score += 50
+        }
+
+        // 2. Infrastructure Presence
+        for (const infra of candidate.layoutType) {
+            if (existingInfra.has(infra)) {
+                score += 10
+            } else {
+                score -= 2
             }
         }
 
-        return overlapScore - expansionPenalty
+        // 3. Optimization (Value Fit Tie-breaker)
+        // Check if environmental needs fit within existing capacity envelopes
+        // (This is a simplified optimization heuristic)
+        for (const [key, value] of Object.entries(candidate.needs)) {
+            if (value && value > 0 && (currentNeeds[key] ?? 0) > 0) {
+                score += 1
+            }
+        }
+
+        return score
     }
 }
 

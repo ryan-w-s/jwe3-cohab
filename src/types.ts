@@ -37,7 +37,7 @@ export interface Dinosaur {
     name: DinoName // Acts as the unique identifier
     family: DinosaurFamily
     habitat: Habitat
-    feedType: string[]
+    layoutType: string[]
     /**
      * Needs are represented as fractions (0.0 - 1.0) for percentages,
      * or absolute values for specific counts (like fish).
@@ -51,4 +51,4 @@ export interface Dinosaur {
 }
 
 export type Dinosaurs = Dinosaur[]
-export type RawDinosaur = Omit<Dinosaur, 'habitat' | 'feedType'>
+export type RawDinosaur = Omit<Dinosaur, 'habitat' | 'layoutType'>

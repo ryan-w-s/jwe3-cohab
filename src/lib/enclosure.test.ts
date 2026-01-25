@@ -8,7 +8,7 @@ function createTestDino(overrides: Partial<Dinosaur> = {}): Dinosaur {
         name: 'TestDino',
         family: 'TestFamily',
         habitat: 'fence',
-        feedType: ['leaf'],
+        layoutType: ['leaf'],
         needs: { pasture: 0.5, water: 0.1 },
         social: { min_population: 1 },
         cohabitation: { likes: [], dislikes: [] },
