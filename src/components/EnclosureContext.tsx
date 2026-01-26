@@ -1,6 +1,7 @@
-import { createContext, useContext, useState, useCallback, useMemo, useReducer, type ReactNode } from 'react'
+import { createContext, useContext, useState, useCallback, useMemo, useReducer, useEffect, type ReactNode } from 'react'
 import { Enclosure, createEnclosure, getDinosaur, type CohabitationWarning } from '@/lib/enclosure'
 import type { Dinosaur, Habitat, Needs } from '@/types'
+import { useEnclosureManager } from './EnclosureManagerContext'
 
 interface EnclosureContextValue {
     habitat: Habitat
@@ -11,6 +12,7 @@ interface EnclosureContextValue {
     setHabitat: (habitat: Habitat) => void
     addDino: (name: string) => boolean
     removeDino: (name: string) => boolean
+    hasActiveEnclosure: boolean
 }
 
 const EnclosureContext = createContext<EnclosureContextValue | null>(null)
@@ -29,27 +31,68 @@ interface EnclosureProviderProps {
 }
 
 export function EnclosureProvider({ children, initialHabitat = 'fence' }: EnclosureProviderProps) {
-    const [enclosure, setEnclosure] = useState<Enclosure>(() => createEnclosure(initialHabitat))
+    const manager = useEnclosureManager()
+    const activeEnclosure = manager.activeEnclosure
+
+    const [enclosure, setEnclosure] = useState<Enclosure>(() => {
+        const enc = createEnclosure(activeEnclosure?.habitat ?? initialHabitat)
+        // Load dinosaurs from saved state
+        if (activeEnclosure) {
+            for (const name of activeEnclosure.dinosaurs) {
+                const dino = getDinosaur(name)
+                if (dino) enc.addDinosaur(dino)
+            }
+        }
+        return enc
+    })
     // Use a reducer to force updates when the enclosure is mutated
     const [version, incrementVersion] = useReducer((v: number) => v + 1, 0)
 
+    // Sync enclosure state when active enclosure changes
+    useEffect(() => {
+        const enc = createEnclosure(activeEnclosure?.habitat ?? initialHabitat)
+        if (activeEnclosure) {
+            for (const name of activeEnclosure.dinosaurs) {
+                const dino = getDinosaur(name)
+                if (dino) enc.addDinosaur(dino)
+            }
+        }
+        setEnclosure(enc)
+        incrementVersion()
+    }, [activeEnclosure?.id, activeEnclosure?.habitat, initialHabitat])
+
     const setHabitat = useCallback((habitat: Habitat) => {
+        if (activeEnclosure) {
+            manager.updateEnclosureHabitat(activeEnclosure.id, habitat)
+        }
         setEnclosure(createEnclosure(habitat))
-    }, [])
+    }, [activeEnclosure, manager])
 
     const addDino = useCallback((name: string): boolean => {
         const dino = getDinosaur(name)
         if (!dino) return false
         const result = enclosure.addDinosaur(dino)
-        if (result) incrementVersion()
+        if (result) {
+            incrementVersion()
+            // Persist to manager
+            if (activeEnclosure) {
+                manager.updateEnclosureDinosaurs(activeEnclosure.id, enclosure.dinosaurs.map(d => d.name))
+            }
+        }
         return result
-    }, [enclosure])
+    }, [enclosure, activeEnclosure, manager])
 
     const removeDino = useCallback((name: string): boolean => {
         const result = enclosure.removeDinosaur(name)
-        if (result) incrementVersion()
+        if (result) {
+            incrementVersion()
+            // Persist to manager
+            if (activeEnclosure) {
+                manager.updateEnclosureDinosaurs(activeEnclosure.id, enclosure.dinosaurs.map(d => d.name))
+            }
+        }
         return result
-    }, [enclosure])
+    }, [enclosure, activeEnclosure, manager])
 
     const value = useMemo<EnclosureContextValue>(() => ({
         habitat: enclosure.habitat,
@@ -60,8 +103,9 @@ export function EnclosureProvider({ children, initialHabitat = 'fence' }: Enclos
         setHabitat,
         addDino,
         removeDino,
+        hasActiveEnclosure: activeEnclosure !== null,
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }), [enclosure, version, setHabitat, addDino, removeDino])
+    }), [enclosure, version, setHabitat, addDino, removeDino, activeEnclosure])
 
     return (
         <EnclosureContext.Provider value={value}>
@@ -69,3 +113,4 @@ export function EnclosureProvider({ children, initialHabitat = 'fence' }: Enclos
         </EnclosureContext.Provider>
     )
 }
+

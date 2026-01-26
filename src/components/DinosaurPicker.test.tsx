@@ -1,18 +1,44 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { DinosaurPicker } from './DinosaurPicker'
 import { EnclosureProvider } from './EnclosureContext'
+import { EnclosureManagerProvider } from './EnclosureManagerContext'
+
+// Mock localStorage
+const localStorageMock = (() => {
+    let store: Record<string, string> = {}
+    return {
+        getItem: vi.fn((key: string) => store[key] ?? null),
+        setItem: vi.fn((key: string, value: string) => {
+            store[key] = value
+        }),
+        clear: () => {
+            store = {}
+        },
+    }
+})()
+
+Object.defineProperty(globalThis, 'localStorage', {
+    value: localStorageMock,
+})
 
 function renderWithProvider() {
     return render(
-        <EnclosureProvider>
-            <DinosaurPicker />
-        </EnclosureProvider>
+        <EnclosureManagerProvider>
+            <EnclosureProvider>
+                <DinosaurPicker />
+            </EnclosureProvider>
+        </EnclosureManagerProvider>
     )
 }
 
 describe('DinosaurPicker', () => {
+    beforeEach(() => {
+        localStorageMock.clear()
+        vi.clearAllMocks()
+    })
+
     it('renders search input', () => {
         renderWithProvider()
         expect(screen.getByPlaceholderText(/Search by name or family/)).toBeInTheDocument()
@@ -50,3 +76,4 @@ describe('DinosaurPicker', () => {
         expect(screen.getByText('No matches found')).toBeInTheDocument()
     })
 })
+

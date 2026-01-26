@@ -37,12 +37,13 @@ describe('DinoCard', () => {
         expect(screen.getByText('+50')).toBeInTheDocument()
     })
 
-    it('shows add button in picker variant', async () => {
+    it('calls onAdd when card is clicked in picker variant', async () => {
         const onAdd = vi.fn()
         const user = userEvent.setup()
         render(<DinoCard dinosaur={mockDino} variant="picker" onAdd={onAdd} />)
 
-        await user.click(screen.getByLabelText('Add Triceratops'))
+        // Click the card itself (it's now clickable, not a separate button)
+        await user.click(screen.getByText('Triceratops'))
         expect(onAdd).toHaveBeenCalled()
     })
 

@@ -1,17 +1,43 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { EnclosurePanel } from './EnclosurePanel'
 import { EnclosureProvider } from './EnclosureContext'
+import { EnclosureManagerProvider } from './EnclosureManagerContext'
+
+// Mock localStorage
+const localStorageMock = (() => {
+    let store: Record<string, string> = {}
+    return {
+        getItem: vi.fn((key: string) => store[key] ?? null),
+        setItem: vi.fn((key: string, value: string) => {
+            store[key] = value
+        }),
+        clear: () => {
+            store = {}
+        },
+    }
+})()
+
+Object.defineProperty(globalThis, 'localStorage', {
+    value: localStorageMock,
+})
 
 function renderWithProvider() {
     return render(
-        <EnclosureProvider>
-            <EnclosurePanel />
-        </EnclosureProvider>
+        <EnclosureManagerProvider>
+            <EnclosureProvider>
+                <EnclosurePanel />
+            </EnclosureProvider>
+        </EnclosureManagerProvider>
     )
 }
 
 describe('EnclosurePanel', () => {
+    beforeEach(() => {
+        localStorageMock.clear()
+        vi.clearAllMocks()
+    })
+
     it('renders habitat selector', () => {
         renderWithProvider()
         expect(screen.getByRole('combobox')).toBeInTheDocument()
@@ -37,3 +63,4 @@ describe('EnclosurePanel', () => {
         expect(screen.getByText('Habitat Type')).toBeInTheDocument()
     })
 })
+
