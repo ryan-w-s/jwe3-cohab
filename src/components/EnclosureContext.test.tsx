@@ -127,6 +127,48 @@ describe('EnclosureContext', () => {
         })
     })
 
+    it('prevents changing habitat if dinosaurs are present', async () => {
+        const user = userEvent.setup()
+        render(
+            <TestWrapper>
+                <TestConsumer />
+            </TestWrapper>
+        )
+
+        // Ensure we handle async updates
+        await waitFor(() => {
+            expect(screen.getByTestId('habitat').textContent).toBe('fence')
+        })
+
+        // Add dinosaur
+        await user.click(screen.getByText('Add Anky'))
+        await waitFor(() => {
+            expect(screen.getByTestId('dino-count').textContent).toBe('1')
+        })
+
+        // Try to switch habitat
+        await user.click(screen.getByText('Switch to Aviary'))
+
+        // Should still be fence because we have a dino
+        await waitFor(() => {
+            expect(screen.getByTestId('habitat').textContent).toBe('fence')
+        })
+
+        // Remove dinosaur
+        await user.click(screen.getByText('Remove Anky'))
+        await waitFor(() => {
+            expect(screen.getByTestId('dino-count').textContent).toBe('0')
+        })
+
+        // Try to switch habitat again
+        await user.click(screen.getByText('Switch to Aviary'))
+
+        // Should now be aviary
+        await waitFor(() => {
+            expect(screen.getByTestId('habitat').textContent).toBe('aviary')
+        })
+    })
+
     it('throws error when used outside provider', () => {
         // Suppress console.error for this test  
         const originalError = console.error

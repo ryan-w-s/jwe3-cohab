@@ -65,11 +65,14 @@ export function EnclosureProvider({ children, initialHabitat = 'fence' }: Enclos
     }, [activeEnclosure?.id, activeEnclosure?.habitat, initialHabitat])
 
     const setHabitat = useCallback((habitat: Habitat) => {
+        // Prevent changing habitat if there are dinosaurs
+        if (enclosure.dinosaurs.length > 0) return
+
         if (activeEnclosure) {
             manager.updateEnclosureHabitat(activeEnclosure.id, habitat)
         }
         setEnclosure(createEnclosure(habitat))
-    }, [activeEnclosure, manager])
+    }, [activeEnclosure, manager, enclosure.dinosaurs.length])
 
     const addDino = useCallback((name: string): boolean => {
         const dino = getDinosaur(name)

@@ -24,7 +24,11 @@ export function EnclosurePanel() {
                 <label className="text-sm font-medium text-muted-foreground block mb-2">
                     Habitat Type
                 </label>
-                <Select value={habitat} onValueChange={(v) => setHabitat(v as Habitat)}>
+                <Select
+                    value={habitat}
+                    onValueChange={(v) => setHabitat(v as Habitat)}
+                    disabled={dinosaurs.length > 0}
+                >
                     <SelectTrigger className="w-full">
                         <SelectValue />
                     </SelectTrigger>
@@ -34,6 +38,11 @@ export function EnclosurePanel() {
                         <SelectItem value="lagoon">{habitatLabels.lagoon}</SelectItem>
                     </SelectContent>
                 </Select>
+                {dinosaurs.length > 0 && (
+                    <p className="text-xs text-muted-foreground mt-2">
+                        Remove all dinosaurs to change habitat type.
+                    </p>
+                )}
             </div>
 
             {/* Cohabitation Warnings */}
