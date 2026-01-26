@@ -63,7 +63,7 @@ export function EnclosurePanel() {
                 </div>
                 <div className="flex-1 min-h-0 overflow-hidden">
                     <ScrollArea className="h-full">
-                        <div className="px-4">
+                        <div className="px-4 pt-1">
                             {dinosaurs.length === 0 ? (
                                 <div className="text-sm text-muted-foreground py-8 text-center">
                                     No dinosaurs yet. Add some from the picker!
