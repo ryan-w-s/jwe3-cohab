@@ -6,6 +6,7 @@ import { defineConfig } from "vitest/config"
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/jwe3-cohab/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
