@@ -15,8 +15,8 @@ import { useEnclosure } from './EnclosureContext'
 import type { FilterMode } from '@/types'
 
 const FILTER_MODE_LABELS: Record<FilterMode, string> = {
-    'strict': 'Strict (Mutual Likes)',
-    'no-dislike': 'No Dislike (Default)',
+    'strict': 'Strict (Mutual Likes) (Default)',
+    'no-dislike': 'No Dislike',
     'loose': 'Loose (Show All)',
 }
 

@@ -47,7 +47,7 @@ export function EnclosureProvider({ children, initialHabitat = 'fence' }: Enclos
         }
         return enc
     })
-    const [filterMode, setFilterMode] = useState<FilterMode>('no-dislike')
+    const [filterMode, setFilterMode] = useState<FilterMode>('strict')
     // Use a reducer to force updates when the enclosure is mutated
     const [version, incrementVersion] = useReducer((v: number) => v + 1, 0)
 
