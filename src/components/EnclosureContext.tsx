@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, useMemo, useReducer, useEffect, type ReactNode } from 'react'
 import { Enclosure, createEnclosure, getDinosaur, type CohabitationWarning } from '@/lib/enclosure'
-import type { Dinosaur, Habitat, Needs } from '@/types'
+import type { Dinosaur, FilterMode, Habitat, Needs } from '@/types'
 import { useEnclosureManager } from './EnclosureManagerContext'
 
 interface EnclosureContextValue {
@@ -9,7 +9,9 @@ interface EnclosureContextValue {
     combinedNeeds: Needs
     warnings: CohabitationWarning[]
     suggestedDinos: Array<{ dinosaur: Dinosaur, score: number }>
+    filterMode: FilterMode
     setHabitat: (habitat: Habitat) => void
+    setFilterMode: (mode: FilterMode) => void
     addDino: (name: string) => boolean
     removeDino: (name: string) => boolean
     hasActiveEnclosure: boolean
@@ -45,6 +47,7 @@ export function EnclosureProvider({ children, initialHabitat = 'fence' }: Enclos
         }
         return enc
     })
+    const [filterMode, setFilterMode] = useState<FilterMode>('no-dislike')
     // Use a reducer to force updates when the enclosure is mutated
     const [version, incrementVersion] = useReducer((v: number) => v + 1, 0)
 
@@ -99,13 +102,15 @@ export function EnclosureProvider({ children, initialHabitat = 'fence' }: Enclos
         dinosaurs: enclosure.dinosaurs,
         combinedNeeds: enclosure.getCombinedNeeds(),
         warnings: enclosure.getCohabitationWarnings(),
-        suggestedDinos: enclosure.getSuggestedDinosaurs(),
+        suggestedDinos: enclosure.getSuggestedDinosaurs(filterMode),
+        filterMode,
         setHabitat,
+        setFilterMode,
         addDino,
         removeDino,
         hasActiveEnclosure: activeEnclosure !== null,
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }), [enclosure, version, setHabitat, addDino, removeDino, activeEnclosure])
+    }), [enclosure, version, filterMode, setHabitat, addDino, removeDino, activeEnclosure])
 
     return (
         <EnclosureContext.Provider value={value}>

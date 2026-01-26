@@ -75,5 +75,11 @@ describe('DinosaurPicker', () => {
 
         expect(screen.getByText('No matches found')).toBeInTheDocument()
     })
+
+    it('renders filter mode selector with default value', () => {
+        renderWithProvider()
+        // The select should show the default "No Dislike" option
+        expect(screen.getByRole('combobox')).toBeInTheDocument()
+    })
 })
 

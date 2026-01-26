@@ -1,6 +1,7 @@
 export type DinosaurFamily = string // E.g., "Ornithomimosaurid", "Carnivores"
 export type Habitat = 'fence' | 'aviary' | 'lagoon'
 export type DinoName = string
+export type FilterMode = 'strict' | 'no-dislike' | 'loose'
 export type Needs = {
     arid?: number
     barren?: number

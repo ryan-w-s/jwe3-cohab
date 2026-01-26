@@ -1,4 +1,4 @@
-import type { Dinosaur, DinoName, DinosaurFamily, Habitat, Needs } from '@/types'
+import type { Dinosaur, DinoName, DinosaurFamily, FilterMode, Habitat, Needs } from '@/types'
 import { dinosByName, dinosByHabitat } from './dinos'
 
 /**
@@ -114,9 +114,9 @@ export class Enclosure {
     /**
      * Get a sorted list of compatible dinosaurs that could be added to this enclosure.
      * Ranked by how well their needs overlap with the current combined needs.
-     * Filters out dinosaurs that would cause cohabitation conflicts.
+     * @param filterMode - 'strict' (mutual likes), 'no-dislike' (default), 'loose' (show all)
      */
-    getSuggestedDinosaurs(): Array<{ dinosaur: Dinosaur, score: number }> {
+    getSuggestedDinosaurs(filterMode: FilterMode = 'no-dislike'): Array<{ dinosaur: Dinosaur, score: number }> {
         const candidates = dinosByHabitat[this.habitat] ?? []
         const currentNeeds = this.getCombinedNeeds()
         const suggestions: Array<{ dinosaur: Dinosaur, score: number }> = []
@@ -125,8 +125,15 @@ export class Enclosure {
             // Skip if already in enclosure
             if (this._dinosaurs.has(candidate.name)) continue
 
-            // Check for conflicts
-            if (this.wouldCauseConflict(candidate)) continue
+            // Apply filter based on mode
+            if (filterMode === 'strict') {
+                // Strict: Only include mutually liked candidates
+                if (!this.isMutuallyLiked(candidate)) continue
+            } else if (filterMode === 'no-dislike') {
+                // No-dislike: Filter out conflicts (current behavior)
+                if (this.wouldCauseConflict(candidate)) continue
+            }
+            // Loose: No filtering, include all candidates
 
             // Calculate overlap score (higher = better fit)
             const score = this.calculateOverlapScore(candidate, currentNeeds)
@@ -152,6 +159,30 @@ export class Enclosure {
             if (this.hasConflict(dino, candidate)) return true
         }
         return false
+    }
+
+    /**
+     * Check if a candidate is mutually liked by all existing dinosaurs.
+     * For strict mode: both candidate and existing dinos must like each other.
+     * Returns true if the enclosure is empty (any dino can be first).
+     */
+    private isMutuallyLiked(candidate: Dinosaur): boolean {
+        if (this._dinosaurs.size === 0) return true
+
+        for (const dino of this._dinosaurs.values()) {
+            // Check if existing dino likes the candidate (by name or family)
+            const dinoLikesCandidate =
+                dino.cohabitation.likes.includes(candidate.name) ||
+                dino.cohabitation.likes.includes(candidate.family)
+
+            // Check if candidate likes the existing dino (by name or family)
+            const candidateLikesDino =
+                candidate.cohabitation.likes.includes(dino.name) ||
+                candidate.cohabitation.likes.includes(dino.family)
+
+            if (!dinoLikesCandidate || !candidateLikesDino) return false
+        }
+        return true
     }
 
     /**

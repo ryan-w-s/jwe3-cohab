@@ -263,4 +263,63 @@ describe('Enclosure', () => {
             expect(anky?.family).toBe('Ankylosaurid')
         })
     })
+
+    describe('getSuggestedDinosaurs with filter modes', () => {
+        it('loose mode includes dinosaurs with conflicts', () => {
+            const enclosure = createEnclosure('fence')
+            // Add an Ankylosaurus which dislikes Carnivores
+            const anky = getDinosaur('Ankylosaurus')
+            if (anky) enclosure.addDinosaur(anky)
+
+            const looseResults = enclosure.getSuggestedDinosaurs('loose')
+            const noDislikeResults = enclosure.getSuggestedDinosaurs('no-dislike')
+
+            // Loose should have more results than no-dislike (includes carnivores)
+            expect(looseResults.length).toBeGreaterThan(noDislikeResults.length)
+
+            // Loose should include T. Rex (a carnivore)
+            const hasTRex = looseResults.some(s => s.dinosaur.name === 'Tyrannosaurus Rex')
+            expect(hasTRex).toBe(true)
+        })
+
+        it('strict mode only includes mutually liked dinosaurs', () => {
+            const enclosure = createEnclosure('fence')
+            const dino = createTestDino({
+                name: 'Choosy',
+                cohabitation: { likes: ['BestFriend', 'FriendFamily'], dislikes: [] },
+            })
+            enclosure.addDinosaur(dino)
+
+            const strictResults = enclosure.getSuggestedDinosaurs('strict')
+
+            // In strict mode, only dinosaurs that mutually like each other should appear
+            // Since 'Choosy' only likes specific names/families that don't exist in the db,
+            // strict mode should return very few or no results
+            expect(strictResults.length).toBeLessThan(
+                enclosure.getSuggestedDinosaurs('no-dislike').length
+            )
+        })
+
+        it('strict mode returns all candidates when enclosure is empty', () => {
+            const enclosure = createEnclosure('fence')
+
+            const strictResults = enclosure.getSuggestedDinosaurs('strict')
+            const noDislikeResults = enclosure.getSuggestedDinosaurs('no-dislike')
+
+            // When empty, strict and no-dislike should return the same results
+            expect(strictResults.length).toBe(noDislikeResults.length)
+        })
+
+        it('no-dislike mode excludes dinosaurs that would cause conflicts', () => {
+            const enclosure = createEnclosure('fence')
+            const anky = getDinosaur('Ankylosaurus')
+            if (anky) enclosure.addDinosaur(anky)
+
+            const results = enclosure.getSuggestedDinosaurs('no-dislike')
+            const names = results.map(s => s.dinosaur.name)
+
+            // Should NOT include T. Rex (Large Carnivore, disliked by Ankylosaurus)
+            expect(names).not.toContain('Tyrannosaurus Rex')
+        })
+    })
 })

@@ -3,11 +3,25 @@ import { IconSearch, IconX } from '@tabler/icons-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select'
 import { DinoCard } from './DinoCard'
 import { useEnclosure } from './EnclosureContext'
+import type { FilterMode } from '@/types'
+
+const FILTER_MODE_LABELS: Record<FilterMode, string> = {
+    'strict': 'Strict (Mutual Likes)',
+    'no-dislike': 'No Dislike (Default)',
+    'loose': 'Loose (Show All)',
+}
 
 export function DinosaurPicker() {
-    const { suggestedDinos, addDino } = useEnclosure()
+    const { suggestedDinos, filterMode, setFilterMode, addDino } = useEnclosure()
     const [search, setSearch] = useState('')
 
     const filteredDinos = useMemo(() => {
@@ -25,25 +39,37 @@ export function DinosaurPicker() {
             {/* Search Header */}
             <div className="p-4 border-b shrink-0">
                 <h2 className="text-lg font-semibold mb-3">Add Dinosaurs</h2>
-                <div className="relative">
-                    <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                        placeholder="Search by name or family..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className="pl-9 pr-9"
-                    />
-                    {search && (
-                        <Button
-                            size="icon"
-                            variant="ghost"
-                            className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
-                            onClick={() => setSearch('')}
-                            aria-label="Clear search"
-                        >
-                            <IconX className="h-4 w-4" />
-                        </Button>
-                    )}
+                <div className="flex gap-2">
+                    <Select value={filterMode} onValueChange={(value) => setFilterMode(value as FilterMode)}>
+                        <SelectTrigger className="w-[180px]">
+                            <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="strict">{FILTER_MODE_LABELS['strict']}</SelectItem>
+                            <SelectItem value="no-dislike">{FILTER_MODE_LABELS['no-dislike']}</SelectItem>
+                            <SelectItem value="loose">{FILTER_MODE_LABELS['loose']}</SelectItem>
+                        </SelectContent>
+                    </Select>
+                    <div className="relative flex-1">
+                        <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                        <Input
+                            placeholder="Search by name or family..."
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            className="pl-9 pr-9"
+                        />
+                        {search && (
+                            <Button
+                                size="icon"
+                                variant="ghost"
+                                className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
+                                onClick={() => setSearch('')}
+                                aria-label="Clear search"
+                            >
+                                <IconX className="h-4 w-4" />
+                            </Button>
+                        )}
+                    </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-2">
                     {filteredDinos.length} compatible dinosaurs
