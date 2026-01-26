@@ -1,4 +1,4 @@
-import { IconPlus, IconX } from '@tabler/icons-react'
+import { IconX } from '@tabler/icons-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -14,8 +14,16 @@ interface DinoCardProps {
 }
 
 export function DinoCard({ dinosaur, variant, score, onAdd, onRemove }: DinoCardProps) {
+    const isClickable = variant === 'picker' && onAdd
+
     return (
-        <Card className="group relative hover:bg-accent/50 transition-colors">
+        <Card
+            className={`group relative transition-colors ${isClickable ? 'cursor-pointer hover:bg-accent/50' : 'hover:bg-accent/30'}`}
+            onClick={isClickable ? onAdd : undefined}
+            role={isClickable ? 'button' : undefined}
+            tabIndex={isClickable ? 0 : undefined}
+            onKeyDown={isClickable ? (e) => { if (e.key === 'Enter' || e.key === ' ') onAdd() } : undefined}
+        >
             <CardContent className="p-3">
                 <div className="flex items-start justify-between gap-2">
                     <div className="flex-1 min-w-0">
@@ -37,17 +45,6 @@ export function DinoCard({ dinosaur, variant, score, onAdd, onRemove }: DinoCard
                             <span className="text-xs text-muted-foreground font-mono">
                                 +{score}
                             </span>
-                        )}
-                        {variant === 'picker' && onAdd && (
-                            <Button
-                                size="icon"
-                                variant="ghost"
-                                className="h-7 w-7"
-                                onClick={onAdd}
-                                aria-label={`Add ${dinosaur.name}`}
-                            >
-                                <IconPlus className="h-4 w-4" />
-                            </Button>
                         )}
                         {variant === 'enclosure' && onRemove && (
                             <Button
