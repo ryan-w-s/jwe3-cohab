@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
-import { IconSearch } from '@tabler/icons-react'
+import { IconSearch, IconX } from '@tabler/icons-react'
 import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { DinoCard } from './DinoCard'
 import { useEnclosure } from './EnclosureContext'
@@ -30,8 +31,19 @@ export function DinosaurPicker() {
                         placeholder="Search by name or family..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="pl-9"
+                        className="pl-9 pr-9"
                     />
+                    {search && (
+                        <Button
+                            size="icon"
+                            variant="ghost"
+                            className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
+                            onClick={() => setSearch('')}
+                            aria-label="Clear search"
+                        >
+                            <IconX className="h-4 w-4" />
+                        </Button>
+                    )}
                 </div>
                 <p className="text-xs text-muted-foreground mt-2">
                     {filteredDinos.length} compatible dinosaurs
