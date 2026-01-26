@@ -41,11 +41,35 @@ interface EnclosureManagerProviderProps {
 }
 
 export function EnclosureManagerProvider({ children }: EnclosureManagerProviderProps) {
-    const [enclosures, setEnclosures] = useState<SavedEnclosure[]>(() => loadEnclosures())
-    const [activeEnclosureId, setActiveEnclosureId] = useState<string | null>(() => {
+    // Initialize both states together to ensure consistency
+    const [{ enclosures, activeEnclosureId }, setManagerState] = useState<{
+        enclosures: SavedEnclosure[]
+        activeEnclosureId: string | null
+    }>(() => {
         const loaded = loadEnclosures()
-        return loaded.length > 0 ? loaded[0].id : null
+        if (loaded.length === 0) {
+            // Create a default enclosure if none exist
+            const defaultEnclosure = createSavedEnclosure('Enclosure 1', 'fence')
+            return { enclosures: [defaultEnclosure], activeEnclosureId: defaultEnclosure.id }
+        }
+        return { enclosures: loaded, activeEnclosureId: loaded[0].id }
     })
+
+    // Helper to update enclosures
+    const setEnclosures = useCallback((updater: SavedEnclosure[] | ((prev: SavedEnclosure[]) => SavedEnclosure[])) => {
+        setManagerState(prev => ({
+            ...prev,
+            enclosures: typeof updater === 'function' ? updater(prev.enclosures) : updater,
+        }))
+    }, [])
+
+    // Helper to update active enclosure ID
+    const setActiveEnclosureId = useCallback((id: string | null | ((prev: string | null) => string | null)) => {
+        setManagerState(prev => ({
+            ...prev,
+            activeEnclosureId: typeof id === 'function' ? id(prev.activeEnclosureId) : id,
+        }))
+    }, [])
 
     // Persist to localStorage whenever enclosures change
     useEffect(() => {

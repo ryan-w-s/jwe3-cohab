@@ -48,17 +48,18 @@ describe('EnclosureManagerContext', () => {
         vi.clearAllMocks()
     })
 
-    it('starts with empty enclosures', () => {
+    it('starts with a default enclosure', () => {
         render(
             <EnclosureManagerProvider>
                 <TestConsumer />
             </EnclosureManagerProvider>
         )
-        expect(screen.getByTestId('count').textContent).toBe('0')
-        expect(screen.getByTestId('active').textContent).toBe('none')
+        // Now starts with 1 default enclosure
+        expect(screen.getByTestId('count').textContent).toBe('1')
+        expect(screen.getByTestId('active-name').textContent).toBe('Enclosure 1')
     })
 
-    it('creates new enclosure', async () => {
+    it('creates additional enclosures', async () => {
         const user = userEvent.setup()
         render(
             <EnclosureManagerProvider>
@@ -66,10 +67,12 @@ describe('EnclosureManagerContext', () => {
             </EnclosureManagerProvider>
         )
 
+        // Starts with 1, creates another
+        expect(screen.getByTestId('count').textContent).toBe('1')
         await user.click(screen.getByText('Create'))
 
         await waitFor(() => {
-            expect(screen.getByTestId('count').textContent).toBe('1')
+            expect(screen.getByTestId('count').textContent).toBe('2')
             expect(screen.getByTestId('active-name').textContent).toBe('New Enclosure')
         })
     })
@@ -97,12 +100,12 @@ describe('EnclosureManagerContext', () => {
             </EnclosureManagerProvider>
         )
 
-        await user.click(screen.getByText('Create'))
+        // Rename the default enclosure
         await waitFor(() => {
-            expect(screen.getByText('Rename New Enclosure')).toBeInTheDocument()
+            expect(screen.getByText('Rename Enclosure 1')).toBeInTheDocument()
         })
 
-        await user.click(screen.getByText('Rename New Enclosure'))
+        await user.click(screen.getByText('Rename Enclosure 1'))
 
         await waitFor(() => {
             expect(screen.getByTestId('active-name').textContent).toBe('Renamed')
@@ -117,12 +120,9 @@ describe('EnclosureManagerContext', () => {
             </EnclosureManagerProvider>
         )
 
-        await user.click(screen.getByText('Create'))
-        await waitFor(() => {
-            expect(screen.getByTestId('count').textContent).toBe('1')
-        })
-
-        await user.click(screen.getByText('Delete New Enclosure'))
+        // Delete the default enclosure
+        expect(screen.getByTestId('count').textContent).toBe('1')
+        await user.click(screen.getByText('Delete Enclosure 1'))
 
         await waitFor(() => {
             expect(screen.getByTestId('count').textContent).toBe('0')
