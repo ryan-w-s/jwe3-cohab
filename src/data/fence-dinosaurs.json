@@ -955,6 +955,33 @@
         }
     },
     {
+        "name": "Cryolophosaurus",
+        "family": "Medium Carnivore",
+        "needs": {
+            "cover": 0.11,
+            "pasture": 0.79,
+            "water": 0.10,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
         "name": "Irritator",
         "family": "Medium Carnivore",
         "needs": {
@@ -1420,6 +1447,36 @@
         "cohabitation": {
             "likes": [
                 "Brachiosaurus",
+                "Ankylodocus",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Sauropod",
+                "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Amargasaurus",
+        "family": "Sauropod",
+        "needs": {
+            "cover": 0.45,
+            "wetland": 0.10,
+            "water": 0.10,
+            "ground_fiber": 0.35
+        },
+        "social": {
+            "min_population": 1,
+            "min_males": 1
+        },
+        "cohabitation": {
+            "likes": [
                 "Ankylodocus",
                 "Ornithomimosaurid",
                 "Ceratopsid",
