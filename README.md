@@ -2,6 +2,8 @@
 
 A static tool to find ideal cohabitation for JWE3 dinosaurs.
 
+![Jurassic World Evolution 3 Cohabitation Guide screenshot](./jwe3-cohab-screenshot.png)
+
 ## What you can do
 
 - Create an enclosure, which will track the needs of the dinosaurs in it
