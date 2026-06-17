@@ -603,6 +603,43 @@
         }
     },
     {
+        "name": "Distortus rex",
+        "family": "Hybrid Carnivores",
+        "needs": {
+            "cover": 0.25,
+            "pasture": 0.15,
+            "wetland": 0.50,
+            "water": 0.10,
+            "prey": 1.5
+        },
+        "social": {
+            "min_population": 1
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Indominus rex",
+                "Mutadon",
+                "Carnivores",
+                "Flying Reptile",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Marine (Large)",
+                "Marine (Medium)",
+                "Marine (Small)",
+                "Therizinosaurus",
+                "Marine Animal",
+                "Scavenger",
+                "Iguanodontian"
+            ]
+        }
+    },
+    {
         "name": "Indominus rex",
         "family": "Hybrid Carnivores",
         "needs": {

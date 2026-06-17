@@ -208,4 +208,64 @@ describe('Dinosaur Data Loading', () => {
             'Hybrid Carnivores',
         ])
     })
+
+    it('loads Liopleurodon as a Marine Medium lagoon dinosaur', () => {
+        const liopleurodon = dinosByName['Liopleurodon']
+        expect(liopleurodon).toBeDefined()
+        expect(liopleurodon.family).toBe('Marine (Medium)')
+        expect(liopleurodon.habitat).toBe('lagoon')
+        expect(liopleurodon.needs).toEqual({
+            fish: 0.5,
+            open_water: 1.0,
+        })
+        expect(liopleurodon.social).toEqual({
+            min_population: 2,
+        })
+        expect(liopleurodon.cohabitation).toEqual({
+            likes: [],
+            dislikes: [],
+        })
+    })
+
+    it('loads Distortus rex as a fence Hybrid Carnivore', () => {
+        const distortus = dinosByName['Distortus rex']
+        expect(distortus).toBeDefined()
+        expect(distortus.family).toBe('Hybrid Carnivores')
+        expect(distortus.habitat).toBe('fence')
+        expect(distortus.needs).toEqual({
+            cover: 0.25,
+            pasture: 0.15,
+            wetland: 0.50,
+            water: 0.10,
+            prey: 1.5,
+        })
+        expect(distortus.social).toEqual({
+            min_population: 1,
+        })
+        expect(distortus.cohabitation.likes).toEqual([])
+        expect(distortus.cohabitation.dislikes).toEqual([
+            'Indominus rex',
+            'Mutadon',
+            'Carnivores',
+            'Flying Reptile',
+            'Sauropod',
+            'Ornithomimosaurid',
+            'Ceratopsid',
+            'Ankylosaurid',
+            'Hadrosaurid',
+            'Pachycephalosaurid',
+            'Stegosaurid',
+            'Marine (Large)',
+            'Marine (Medium)',
+            'Marine (Small)',
+            'Therizinosaurus',
+            'Marine Animal',
+            'Scavenger',
+            'Iguanodontian',
+            'Small Carnivore',
+            'Medium Carnivore',
+            'Large Carnivore',
+            'Hybrid Carnivores',
+        ])
+    })
 })

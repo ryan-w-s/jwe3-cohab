@@ -94,6 +94,21 @@
         }
     },
     {
+        "name": "Liopleurodon",
+        "family": "Marine (Medium)",
+        "needs": {
+            "fish": 0.50,
+            "open_water": 1.0
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": []
+        }
+    },
+    {
         "name": "Ichthyosaurus",
         "family": "Marine (Small)",
         "needs": {
