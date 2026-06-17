@@ -2,6 +2,8 @@
 
 A static tool to find ideal cohabitation for JWE3 dinosaurs.
 
+![Jurassic World Evolution 3 Cohabitation Guide screenshot](./jwe3-cohab-screenshot.png)
+
 ## What you can do
 
 - Create an enclosure, which will track the needs of the dinosaurs in it
@@ -44,6 +46,9 @@ bun run test
 
 # Sanity: lint + typecheck + test - prefer this
 bun run sanity
+
+# Deploy to GitHub Pages: builds dist and publishes it to the gh-pages branch
+bun run deploy
 ```
 
 

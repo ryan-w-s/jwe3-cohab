@@ -46,6 +46,9 @@ bun run test
 
 # Sanity: lint + typecheck + test - prefer this
 bun run sanity
+
+# Deploy to GitHub Pages: builds dist and publishes it to the gh-pages branch
+bun run deploy
 ```
 
 
