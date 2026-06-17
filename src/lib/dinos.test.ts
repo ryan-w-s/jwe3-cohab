@@ -131,4 +131,81 @@ describe('Dinosaur Data Loading', () => {
             ],
         })
     })
+
+    it('loads Cearadactylus as a Flying Reptile aviary species', () => {
+        const cearadactylus = dinosByName['Cearadactylus']
+        const quetzalcoatlus = dinosByName['Quetzalcoatlus']
+        expect(cearadactylus).toBeDefined()
+        expect(cearadactylus.family).toBe('Flying Reptile')
+        expect(cearadactylus.habitat).toBe('aviary')
+        expect(cearadactylus.needs).toEqual({
+            arid: 0.15,
+            pasture: 0.28,
+            wetland: 0.48,
+            water: 0.10,
+            fish: 0.5,
+        })
+        expect(cearadactylus.social).toEqual({
+            min_population: 2,
+        })
+        expect(cearadactylus.cohabitation).toEqual({
+            likes: ['Quetzalcoatlus'],
+            dislikes: ['Indoraptor', 'Indominus rex', 'Scorpios rex'],
+        })
+        expect(quetzalcoatlus.cohabitation.likes).toContain('Cearadactylus')
+    })
+
+    it('keeps Hybrid Carnivores in every Flying Reptile dislike list except Cearadactylus', () => {
+        const flyingReptiles = aviaryDinos.filter(dino => dino.family === 'Flying Reptile')
+        const missingHybridCarnivoreDislike = flyingReptiles
+            .filter(dino => dino.name !== 'Cearadactylus')
+            .filter(dino => !dino.cohabitation.dislikes.includes('Hybrid Carnivores'))
+            .map(dino => dino.name)
+
+        expect(missingHybridCarnivoreDislike).toEqual([])
+        expect(dinosByName['Cearadactylus'].cohabitation.dislikes).not.toContain('Hybrid Carnivores')
+    })
+
+    it('loads Mutadon as an aviary Hybrid Carnivore', () => {
+        const mutadon = dinosByName['Mutadon']
+        expect(mutadon).toBeDefined()
+        expect(mutadon.family).toBe('Hybrid Carnivores')
+        expect(mutadon.habitat).toBe('aviary')
+        expect(mutadon.needs).toEqual({
+            cover: 0.11,
+            pasture: 0.26,
+            wetland: 0.54,
+            water: 0.09,
+            prey: 0.5,
+        })
+        expect(mutadon.social).toEqual({
+            min_population: 2,
+            min_females: 2,
+            max_females: 4,
+        })
+        expect(mutadon.cohabitation.likes).toEqual([])
+        expect(mutadon.cohabitation.dislikes).toEqual([
+            'Distortus rex',
+            'Carnivores',
+            'Flying Reptile',
+            'Sauropod',
+            'Ornithomimosaurid',
+            'Ceratopsid',
+            'Ankylosaurid',
+            'Hadrosaurid',
+            'Pachycephalosaurid',
+            'Stegosaurid',
+            'Marine (Large)',
+            'Marine (Medium)',
+            'Marine (Small)',
+            'Therizinosaurus',
+            'Marine Animal',
+            'Scavenger',
+            'Iguanodontian',
+            'Small Carnivore',
+            'Medium Carnivore',
+            'Large Carnivore',
+            'Hybrid Carnivores',
+        ])
+    })
 })

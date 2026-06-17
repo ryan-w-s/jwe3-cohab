@@ -23,6 +23,68 @@
         }
     },
     {
+        "name": "Cearadactylus",
+        "family": "Flying Reptile",
+        "needs": {
+            "arid": 0.15,
+            "pasture": 0.28,
+            "wetland": 0.48,
+            "water": 0.10,
+            "fish": 0.5
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Quetzalcoatlus"
+            ],
+            "dislikes": [
+                "Indoraptor",
+                "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Mutadon",
+        "family": "Hybrid Carnivores",
+        "needs": {
+            "cover": 0.11,
+            "pasture": 0.26,
+            "wetland": 0.54,
+            "water": 0.09,
+            "prey": 0.5
+        },
+        "social": {
+            "min_population": 2,
+            "min_females": 2,
+            "max_females": 4
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": [
+                "Distortus rex",
+                "Carnivores",
+                "Flying Reptile",
+                "Sauropod",
+                "Ornithomimosaurid",
+                "Ceratopsid",
+                "Ankylosaurid",
+                "Hadrosaurid",
+                "Pachycephalosaurid",
+                "Stegosaurid",
+                "Marine (Large)",
+                "Marine (Medium)",
+                "Marine (Small)",
+                "Therizinosaurus",
+                "Marine Animal",
+                "Scavenger",
+                "Iguanodontian"
+            ]
+        }
+    },
+    {
         "name": "Dimorphodon",
         "family": "Flying Reptile",
         "needs": {
@@ -108,7 +170,8 @@
             "likes": [
                 "Dimorphodon",
                 "Tapejara",
-                "Caiuajara"
+                "Caiuajara",
+                "Cearadactylus"
             ],
             "dislikes": [
                 "Hybrid Carnivores"
