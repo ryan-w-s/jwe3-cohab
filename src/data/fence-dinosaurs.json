@@ -87,6 +87,28 @@
         }
     },
     {
+        "name": "Aquilops",
+        "family": "Ceratopsid",
+        "needs": {
+            "pasture": 0.51,
+            "water": 0.16,
+            "ground_fiber": 0.19,
+            "ground_nut": 0.14
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Ceratopsid"
+            ],
+            "dislikes": [
+                "Carnivores",
+                "Therizinosaurus"
+            ]
+        }
+    },
+    {
         "name": "Chasmosaurus",
         "family": "Ceratopsid",
         "needs": {
@@ -1302,6 +1324,32 @@
         }
     },
     {
+        "name": "Dracorex",
+        "family": "Pachycephalosaurid",
+        "needs": {
+            "wetland": 0.09,
+            "water": 0.10,
+            "ground_leaf": 0.54,
+            "ground_nut": 0.27
+        },
+        "social": {
+            "min_population": 4
+        },
+        "cohabitation": {
+            "likes": [
+                "Sauropod",
+                "Ankylosaurid",
+                "Stegosaurid"
+            ],
+            "dislikes": [
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
         "name": "Homalocephale",
         "family": "Pachycephalosaurid",
         "needs": {
@@ -1638,6 +1686,36 @@
             "dislikes": [
                 "Sauropod",
                 "Indominus rex",
+                "Scorpios rex"
+            ]
+        }
+    },
+    {
+        "name": "Titanosaurus",
+        "family": "Sauropod",
+        "needs": {
+            "pasture": 0.16,
+            "wetland": 0.31,
+            "water": 0.18,
+            "tall_leaf": 0.14,
+            "tall_fiber": 0.21
+        },
+        "social": {
+            "min_population": 3,
+            "min_males": 1
+        },
+        "cohabitation": {
+            "likes": [
+                "Patagotitan",
+                "Scavenger"
+            ],
+            "dislikes": [
+                "Small Carnivore",
+                "Large Carnivore",
+                "Medium Carnivore",
+                "Indoraptor",
+                "Indominus rex",
+                "Therizinosaurus",
                 "Scorpios rex"
             ]
         }

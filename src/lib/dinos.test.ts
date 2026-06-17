@@ -56,4 +56,79 @@ describe('Dinosaur Data Loading', () => {
         expect(theriz.cohabitation.dislikes).toContain('Hybrid Carnivores')
         expect(theriz.cohabitation.dislikes).not.toContain('Scavenger')
     })
+
+    it('loads Aquilops as a Ceratopsid fence dinosaur', () => {
+        const aquilops = dinosByName['Aquilops']
+        expect(aquilops).toBeDefined()
+        expect(aquilops.family).toBe('Ceratopsid')
+        expect(aquilops.habitat).toBe('fence')
+        expect(aquilops.needs).toEqual({
+            pasture: 0.51,
+            water: 0.16,
+            ground_fiber: 0.19,
+            ground_nut: 0.14,
+        })
+        expect(aquilops.social).toEqual({
+            min_population: 4,
+        })
+        expect(aquilops.cohabitation.likes).toEqual(['Ceratopsid'])
+        expect(aquilops.cohabitation.dislikes).toEqual([
+            'Carnivores',
+            'Therizinosaurus',
+            'Small Carnivore',
+            'Medium Carnivore',
+            'Large Carnivore',
+            'Hybrid Carnivores',
+        ])
+    })
+
+    it('loads Dracorex as a Pachycephalosaurid fence dinosaur', () => {
+        const dracorex = dinosByName['Dracorex']
+        expect(dracorex).toBeDefined()
+        expect(dracorex.family).toBe('Pachycephalosaurid')
+        expect(dracorex.habitat).toBe('fence')
+        expect(dracorex.needs).toEqual({
+            wetland: 0.09,
+            water: 0.10,
+            ground_leaf: 0.54,
+            ground_nut: 0.27,
+        })
+        expect(dracorex.social).toEqual({
+            min_population: 4,
+        })
+        expect(dracorex.cohabitation).toEqual({
+            likes: ['Sauropod', 'Ankylosaurid', 'Stegosaurid'],
+            dislikes: ['Indoraptor', 'Indominus rex', 'Therizinosaurus', 'Scorpios rex'],
+        })
+    })
+
+    it('loads Titanosaurus as a Sauropod fence dinosaur', () => {
+        const titanosaurus = dinosByName['Titanosaurus']
+        expect(titanosaurus).toBeDefined()
+        expect(titanosaurus.family).toBe('Sauropod')
+        expect(titanosaurus.habitat).toBe('fence')
+        expect(titanosaurus.needs).toEqual({
+            pasture: 0.16,
+            wetland: 0.31,
+            water: 0.18,
+            tall_leaf: 0.14,
+            tall_fiber: 0.21,
+        })
+        expect(titanosaurus.social).toEqual({
+            min_population: 3,
+            min_males: 1,
+        })
+        expect(titanosaurus.cohabitation).toEqual({
+            likes: ['Patagotitan', 'Scavenger'],
+            dislikes: [
+                'Small Carnivore',
+                'Large Carnivore',
+                'Medium Carnivore',
+                'Indoraptor',
+                'Indominus rex',
+                'Therizinosaurus',
+                'Scorpios rex',
+            ],
+        })
+    })
 })
