@@ -3,8 +3,8 @@
         "name": "Kronosaurus",
         "family": "Marine (Large)",
         "needs": {
-            "fish": 0.50,
-            "open_water": 1.0
+            "fish": 0.5,
+            "open_water": 1
         },
         "social": {
             "min_population": 2,
@@ -22,8 +22,8 @@
         "name": "Megalodon",
         "family": "Marine (Large)",
         "needs": {
-            "shark": 0.80,
-            "open_water": 1.0
+            "shark": 0.8,
+            "open_water": 1
         },
         "social": {
             "min_population": 1,
@@ -41,8 +41,8 @@
         "name": "Mosasaurus",
         "family": "Marine (Large)",
         "needs": {
-            "shark": 1.00,
-            "open_water": 1.0
+            "shark": 1,
+            "open_water": 1
         },
         "social": {
             "min_population": 1,
@@ -57,11 +57,26 @@
         }
     },
     {
+        "name": "Shonisaurus",
+        "family": "Marine (Large)",
+        "needs": {
+            "fish": 1,
+            "open_water": 1
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [],
+            "dislikes": []
+        }
+    },
+    {
         "name": "Attenborosaurus",
         "family": "Marine (Medium)",
         "needs": {
-            "fish": 0.40,
-            "open_water": 1.0
+            "fish": 0.4,
+            "open_water": 1
         },
         "social": {
             "min_population": 3,
@@ -80,8 +95,8 @@
         "name": "Dunkleosteus",
         "family": "Marine (Medium)",
         "needs": {
-            "fish": 0.40,
-            "open_water": 1.0
+            "fish": 0.4,
+            "open_water": 1
         },
         "social": {
             "min_population": 1
@@ -94,11 +109,29 @@
         }
     },
     {
+        "name": "Elasmosaurus",
+        "family": "Marine (Medium)",
+        "needs": {
+            "fish": 0.4,
+            "open_water": 1
+        },
+        "social": {
+            "min_population": 2
+        },
+        "cohabitation": {
+            "likes": [
+                "Marine (Medium)",
+                "Marine (Small)"
+            ],
+            "dislikes": []
+        }
+    },
+    {
         "name": "Liopleurodon",
         "family": "Marine (Medium)",
         "needs": {
-            "fish": 0.50,
-            "open_water": 1.0
+            "fish": 0.5,
+            "open_water": 1
         },
         "social": {
             "min_population": 2
@@ -109,11 +142,28 @@
         }
     },
     {
+        "name": "Styxosaurus",
+        "family": "Marine (Medium)",
+        "needs": {
+            "fish": 1,
+            "open_water": 1
+        },
+        "social": {
+            "min_population": 3
+        },
+        "cohabitation": {
+            "likes": [
+                "Marine (Small)"
+            ],
+            "dislikes": []
+        }
+    },
+    {
         "name": "Ichthyosaurus",
         "family": "Marine (Small)",
         "needs": {
-            "fish": 0.20,
-            "open_water": 1.0
+            "fish": 0.2,
+            "open_water": 1
         },
         "social": {
             "min_population": 4
@@ -127,8 +177,8 @@
         "name": "Plesiosaurus",
         "family": "Marine (Small)",
         "needs": {
-            "fish": 0.40,
-            "open_water": 1.0
+            "fish": 0.4,
+            "open_water": 1
         },
         "social": {
             "min_population": 2

@@ -3,7 +3,7 @@
         "name": "Caiuajara",
         "family": "Flying Reptile",
         "needs": {
-            "arid": 0.60,
+            "arid": 0.6,
             "barren": 0.15,
             "cover": 0.18,
             "water": 0.08,
@@ -29,7 +29,7 @@
             "arid": 0.15,
             "pasture": 0.28,
             "wetland": 0.48,
-            "water": 0.10,
+            "water": 0.1,
             "fish": 0.5
         },
         "social": {
@@ -66,7 +66,6 @@
             "dislikes": [
                 "Distortus rex",
                 "Carnivores",
-                "Flying Reptile",
                 "Sauropod",
                 "Ornithomimosaurid",
                 "Ceratopsid",
@@ -74,13 +73,10 @@
                 "Hadrosaurid",
                 "Pachycephalosaurid",
                 "Stegosaurid",
-                "Marine (Large)",
-                "Marine (Medium)",
-                "Marine (Small)",
-                "Therizinosaurus",
-                "Marine Animal",
+                "Therizinosauridae",
                 "Scavenger",
-                "Iguanodontian"
+                "Iguanodontian",
+                "Pseudosuchian"
             ]
         }
     },
@@ -88,9 +84,9 @@
         "name": "Dimorphodon",
         "family": "Flying Reptile",
         "needs": {
-            "arid": 0.20,
-            "pasture": 0.40,
-            "water": 0.40,
+            "arid": 0.2,
+            "pasture": 0.4,
+            "water": 0.4,
             "fish": 0.3
         },
         "social": {
@@ -112,7 +108,7 @@
             "cover": 0.11,
             "pasture": 0.52,
             "wetland": 0.27,
-            "water": 0.10,
+            "water": 0.1,
             "fish": 0.5
         },
         "social": {
@@ -133,7 +129,7 @@
         "family": "Flying Reptile",
         "needs": {
             "barren": 0.12,
-            "pasture": 0.60,
+            "pasture": 0.6,
             "water": 0.28,
             "fish": 0.5
         },
@@ -184,7 +180,7 @@
         "needs": {
             "cover": 0.13,
             "pasture": 0.77,
-            "water": 0.10,
+            "water": 0.1,
             "fish": 0.5
         },
         "social": {
@@ -205,7 +201,7 @@
         "name": "Thanatosdrakon",
         "family": "Flying Reptile",
         "needs": {
-            "barren": 0.10,
+            "barren": 0.1,
             "pasture": 0.59,
             "wetland": 0.08,
             "water": 0.23,
@@ -229,7 +225,7 @@
         "needs": {
             "cover": 0.04,
             "pasture": 0.86,
-            "water": 0.10,
+            "water": 0.1,
             "fish": 0.5
         },
         "social": {
