@@ -74,7 +74,7 @@ describe('Dinosaur Data Loading', () => {
         expect(aquilops.cohabitation.likes).toEqual(['Ceratopsid'])
         expect(aquilops.cohabitation.dislikes).toEqual([
             'Carnivores',
-            'Therizinosaurus',
+            'Therizinosauridae',
             'Small Carnivore',
             'Medium Carnivore',
             'Large Carnivore',
@@ -98,7 +98,7 @@ describe('Dinosaur Data Loading', () => {
         })
         expect(dracorex.cohabitation).toEqual({
             likes: ['Sauropod', 'Ankylosaurid', 'Stegosaurid'],
-            dislikes: ['Indoraptor', 'Indominus rex', 'Therizinosaurus', 'Scorpios rex'],
+            dislikes: ['Indoraptor', 'Indominus rex', 'Therizinosauridae', 'Scorpios rex'],
         })
     })
 
@@ -126,7 +126,7 @@ describe('Dinosaur Data Loading', () => {
                 'Medium Carnivore',
                 'Indoraptor',
                 'Indominus rex',
-                'Therizinosaurus',
+                'Therizinosauridae',
                 'Scorpios rex',
             ],
         })
@@ -244,10 +244,8 @@ describe('Dinosaur Data Loading', () => {
         })
         expect(distortus.cohabitation.likes).toEqual([])
         expect(distortus.cohabitation.dislikes).toEqual([
-            'Indominus rex',
             'Mutadon',
             'Carnivores',
-            'Flying Reptile',
             'Sauropod',
             'Ornithomimosaurid',
             'Ceratopsid',
@@ -255,13 +253,10 @@ describe('Dinosaur Data Loading', () => {
             'Hadrosaurid',
             'Pachycephalosaurid',
             'Stegosaurid',
-            'Marine (Large)',
-            'Marine (Medium)',
-            'Marine (Small)',
-            'Therizinosaurus',
-            'Marine Animal',
+            'Therizinosauridae',
             'Scavenger',
             'Iguanodontian',
+            'Pseudosuchian',
             'Small Carnivore',
             'Medium Carnivore',
             'Large Carnivore',
